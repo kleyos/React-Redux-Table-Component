@@ -1,0 +1,15 @@
+.btn-radio{
+	margin: 15px;
+	font-weight: normal;
+}
+.icon-sort{
+	float: right;
+	color: lightgrey;
+	cursor: pointer;
+}
+.icon-sort:hover{
+	color: grey;
+}
+.well{
+	white-space: pre;
+}
