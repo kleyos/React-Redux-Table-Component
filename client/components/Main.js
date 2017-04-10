@@ -21,7 +21,6 @@ class Main extends React.Component {
 				<button type="button" className="btn btn-primary" onClick={() => addBlock(block.length)}>
 					+ new block
 				</button>
-
 			</div>
 			);
 	}

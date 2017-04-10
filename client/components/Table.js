@@ -38,7 +38,7 @@ class Table extends React.Component {
 					key={ index }
 					className='form-control'
 					value={ qFiltering && qFiltering.field == item && qFiltering.value || '' }
-					onChange={ (e) => filtering(item, e.target.value) }/>
+					onChange={ (e) => {filtering(item, e.target.value); paginating(1)} } />
 					</th>)
 			: null
 
@@ -83,11 +83,9 @@ class Table extends React.Component {
 				</div>
 			: <div className='well'>{`You didn't select row`}</div>
 
-		const countPages = filteringData.length % pagingSize > 0
-			? Math.ceil(filteringData.length/pagingSize) + 1
-			: Math.ceil(filteringData.length/pagingSize)
+		const countPages = Math.ceil(filteringData.length/pagingSize)
 
-		const pages = _.range(1,countPages)
+		const pages = _.range(1,countPages+1)
 			.map((item, index) => <button type="button" className="btn btn-default" key={index}
 				onClick={() => paginating(item) }>{ item }
 			</button>)

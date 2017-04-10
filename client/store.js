@@ -5,4 +5,11 @@ import reduxThunk from 'redux-thunk'
 
 const store = createStore(rootReducer, applyMiddleware(logger, reduxThunk))
 
+// if (module.hot) {
+//     module.hot.accept('./reducers', () => {
+//       const nextRootReducer = require('./reducers')
+//       store.replaceReducer(nextRootReducer)
+//     })
+//   }
+
 export default store
